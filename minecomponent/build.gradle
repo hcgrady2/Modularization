@@ -20,7 +20,7 @@ android {
     sourceSets{
         main{
             //独立运行与集成调试时使用不同的 AndroidManifest.xml
-            if(minRunAlone.toBoolean()){
+            if(!minRunAlone.toBoolean()){
                 manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
             }else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -44,8 +44,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    if (minRunAlone.toBoolean()){
+    //只有不是独立运行的时候，才依赖这个基础lib
+    if (!minRunAlone.toBoolean()){
         implementation project(':compontlib')
     }
-    compile project(path: ':compontlib')
+
 }

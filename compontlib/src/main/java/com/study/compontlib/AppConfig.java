@@ -5,9 +5,12 @@ package com.study.compontlib;
  * Copyright©hcw.All rights reserved.
  */
 
+/**
+ * 通过反射实例化每个 Module 中的 application
+ */
 public class AppConfig {
     public static final String[] CONPONENTS = {
-            "com.study.logincomponet.LoginApp",
+            "com.study.logincomponent.LoginApp",
             "com.study.minecomponent.MineApp"
     };
 }

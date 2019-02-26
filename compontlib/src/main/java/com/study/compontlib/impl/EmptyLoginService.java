@@ -1,8 +1,9 @@
 package com.study.compontlib.impl;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import com.study.compontlib.service.ILoginService;
 
@@ -11,10 +12,12 @@ import com.study.compontlib.service.ILoginService;
  * Copyright©hcw.All rights reserved.
  */
 
+/**
+ * 定义空 Service  实现，防止主工程调用空指针
+ */
 public class EmptyLoginService implements ILoginService {
     @Override
     public void launch(Context context, String targetClass) {
-
     }
 
     @Override

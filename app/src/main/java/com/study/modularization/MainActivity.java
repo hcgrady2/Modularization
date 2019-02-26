@@ -2,12 +2,14 @@ package com.study.modularization;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.study.compontlib.ServiceFactory;
 
 public class MainActivity extends AppCompatActivity {
+
 
     private FrameLayout container;
     @Override

@@ -1,6 +1,7 @@
 package com.study.modularization;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.study.compontlib.AppConfig;
 import com.study.compontlib.IAppComponet;
@@ -30,7 +31,9 @@ public class MainApp extends Application implements IAppComponet{
             try {
                 Class<?> clazz = Class.forName(componet);
                 Object object = clazz.newInstance();
-
+                /**
+                 * 当组件存在并且实现了IAppCompone接口，则通过反射初始化
+                 */
                 if (object instanceof IAppComponet){
                     ((IAppComponet)object).initialize(this);
                 }
